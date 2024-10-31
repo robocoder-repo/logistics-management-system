@@ -3,12 +3,8 @@
 require_once 'auth.php';
 require_once 'inventory_management.php';
 
-// Database connection
-$db = new mysqli('localhost', 'username', 'password', 'logistics_db');
-
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-}
+// Include database configuration
+require_once 'db_config.php';
 
 $auth = new Auth($db);
 $inventory_management = new InventoryManagement($db, $auth, null);

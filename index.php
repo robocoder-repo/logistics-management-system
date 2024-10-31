@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +16,8 @@
     require_once 'employee_dashboard.php';
     require_once 'inventory_management.php';
 
-    // Database connection
-    $db = new mysqli('localhost', 'username', 'password', 'logistics_db');
-
-    if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
-    }
+// Include database configuration
+require_once 'db_config.php';
 
     $auth = new Auth($db);
     $company_management = new CompanyManagement($db, $auth);

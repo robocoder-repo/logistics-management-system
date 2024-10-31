@@ -2,12 +2,8 @@
 <?php
 require_once 'auth.php';
 
-// Database connection
-$db = new mysqli('localhost', 'username', 'password', 'logistics_db');
-
-if ($db->connect_error) {
-    die("Connection failed: " . $db->connect_error);
-}
+// Include database configuration
+require_once 'db_config.php';
 
 $auth = new Auth($db);
 
